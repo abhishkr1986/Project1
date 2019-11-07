@@ -1,0 +1,8 @@
+import requests
+import json
+
+request=requests.get("https://api.openweathermap.org/data/2.5/forecast?lat=53.55&lon=10.00&appid=790a2933863b0ad1465fa43227bc8b5f")
+r_text=request.text
+data=json.loads(r_text)
+data_serialized=json.dump(data, open("json.data" ,"w") ,indent=4)
+print(data_serialized)
